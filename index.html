@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d2b">
+  <title>Tú pequeño universo ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="moving-galaxy" aria-hidden="true"><span></span><i></i></div>
+  <div class="nebula nebula-one" aria-hidden="true"></div>
+  <div class="nebula nebula-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">✦ <span>TÚ universo</span></a>
+    <button id="musicButton" class="music-button" type="button" aria-pressed="false">
+      <span id="musicIcon">♫</span> <span id="musicLabel">Activar música</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="orbit orbit-one" aria-hidden="true"></div>
+      <div class="orbit orbit-two" aria-hidden="true"></div>
+      <span class="floating-heart heart-one" aria-hidden="true">♡</span>
+      <span class="floating-heart heart-two" aria-hidden="true">✧</span>
+      <p class="eyebrow">UNA PEQUEÑA GALAXIA HECHA PARA SARITA</p>
+      <h1 class="intro-title">Tengo una sorpresa<br><span class="gradient-text">para ti...</span></h1>
+      <p class="hero-copy intro-copy">Preparé un pequeño universo para celebrar lo especial que eres.<br>¿Quieres descubrirlo?</p>
+
+      <button class="gift-button" id="startButton" type="button" aria-label="Abrir tu regalo de cumpleaños">
+        <span class="gift-sparkle sparkle-one">✦</span>
+        <span class="gift-sparkle sparkle-two">✧</span>
+        <span class="gift-box" aria-hidden="true">
+          <span class="gift-lid"></span>
+          <span class="gift-bow"></span>
+          <span class="gift-body"><span class="gift-ribbon"></span></span>
+        </span>
+        <span class="gift-label">Ábreme</span>
+      </button>
+      <p class="gift-hint" id="giftHint">Toca el regalo para ver tu sorpresa ✨</p>
+
+      <div class="birthday-reveal" id="birthdayReveal" aria-live="polite" hidden>
+        <p class="eyebrow">HECHO CON TODO MI CARIÑO</p>
+        <h2 class="birthday-pulse">¡Feliz cumpleaños, <span class="gradient-text" id="partnerName">mi princesa hermosa</span>!</h2>
+        <div class="intro-cake" id="introCake" aria-label="Pastel de cumpleaños con velas">
+          <div class="intro-cake-glow"></div>
+          <div class="intro-candle-row">
+            <span class="intro-candle"><i></i></span>
+            <span class="intro-candle"><i></i></span>
+            <span class="intro-candle"><i></i></span>
+          </div>
+          <div class="intro-cake-top"></div>
+          <div class="intro-cake-middle"></div>
+          <div class="intro-cake-bottom"></div>
+          <div class="intro-cake-plate"></div>
+        </div>
+        <p class="cake-reveal-caption">Que tu nuevo año brille tanto como las estrellas así como lo brillas tú. 💜🪼​</p>
+        <button class="primary-button" id="continueButton" type="button">Descubrir nuestra historia <span>→</span></button>
+      </div>
+      <div class="scroll-hint"><span class="scroll-line"></span> DESLIZA PARA DESCUBRIR</div>
+    </section>
+
+    <section class="section memories-section reveal" id="recuerdos">
+      <div class="section-heading">
+        <p class="eyebrow">CAPÍTULO I · CONSTELACIÓN DE RECUERDOS</p>
+        <h2>Mis momentos favoritos <span class="gradient-text">tienen tu nombre</span></h2>
+        <p>Cada recuerdo contigo es una estrella que guardo en mi corazón.</p>
+      </div>
+      <div class="memory-grid">
+        <article class="memory-card">
+          <div class="photo-frame photo-one">
+            <img src="fotos/foto1.jpg" alt="Nuestro primer recuerdo" onerror="this.style.display='none'">
+            <span class="photo-placeholder">✧<small>Añade aquí una foto</small></span>
+            <span class="photo-number">01</span>
+          </div>
+          <h3>Cuando todo comenzó</h3>
+          <p>El inicio de nuestra historia, esas primeras salidas en las que empezamos a acercarnos, y donde cada día descubría y me enamoraba más de la gran mujer que estabas siendo para mí.</p>
+        </article>
+        <article class="memory-card memory-card-offset">
+          <div class="photo-frame photo-two">
+            <img src="fotos/foto2.jpg" alt="Un momento especial juntos" onerror="this.style.display='none'">
+            <span class="photo-placeholder">♡<small>Añade aquí una foto</small></span>
+            <span class="photo-number">02</span>
+          </div>
+          <h3>Un instante contigo</h3>
+          <p>No necesitábamos un lugar perfecto; lo verdaderamente hermoso era compartirlo a tu lado, porque estar contigo ya lo volvía todo perfecto.</p>
+        </article>
+        <article class="memory-card">
+          <div class="photo-frame photo-three">
+            <img src="fotos/foto3.jpg" alt="Otro recuerdo de nosotros" onerror="this.style.display='none'">
+            <span class="photo-placeholder">☾<small>Añade aquí una foto</small></span>
+            <span class="photo-number">03</span>
+          </div>
+          <h3>La mujer que eres</h3>
+          <p>Sara, la mujer que se robó mi corazón, a la que tanto admiro y de la que me siento profundamente orgulloso por la clase de mujer que eres 🪼​.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section letter-section reveal" id="carta">
+      <div class="letter-orb" aria-hidden="true">♡</div>
+      <p class="eyebrow">CAPÍTULO II · MENSAJE DESDE EL CORAZÓN</p>
+      <h2>Hay algo que quiero decirte...</h2>
+      <div class="letter-paper">
+        <div class="letter-top">✦ PARA TI, CON TODO MI CARIÑO ✦</div>
+        <p class="letter-greeting">Sarita,</p>
+        <p id="letterText" class="letter-text">Hoy se celebra que existes, una mujer con un hermoso corazón, con una hermosa forma de amar y dar cariño, una mujer que tiene unas grandes cualidades que la hace tan única y hermosa; y yo celebro la suerte de haberte conocido. Que este nuevo año traiga nuevas experiencias que te regalen tranquilidad, sueños cumplidos, motivos para sonreír y personas que te quieran bonito. </p>
+        <p class="letter-text">Siento mucho lo que pasó dentro de nuestra relación y el dolor que te ha causado, aun así, quiero agradecerte porque gracias a ti me diste razones para seguir adelante, al desear un futuro a tú lado. Quiero que sepas lo importante que eres para mí, por eso hago todo esto porque te lo mereces, es poco, pero es todo lo que tengo y me hace feliz por hacer estas cosas con cariño y esa ilusión de verte feliz. Estoy muy feliz de haber coincidió contigo en un día tan poco probable, estoy feliz de ver que me enamoré de la gran mujer que eres, estoy feliz de ver como avanzas y superas varios obstáculos que te ha dado la vida, ver como los superas demuestra lo fuerte que eres y capaz. Has sobrevivido a todos tus días difíciles hasta hoy. Nunca subestimes la inmensa fuerza que vive en ti. Por esa misma razón te admiro mucho y estoy muy orgulloso de ti. </p>
+        <p class="letter-text">Quiero recordarte lo mucho que vales, haz hecho muchas cosas por mí que nunca olvidaré, y no solo conmigo, también lo que has hecho por otras personas, siempre das todo de ti incluso cuando todo esta mal, eso demuestra mucho el hermoso corazón que tienes, eres una mujer muy bella y fuerte, aunque eres muy sentimental, pero esa es tu esencia, tu hermoso ser que hizo enamorarme de ti y quise dar todo de mí por ti, talvez no fue suficiente porque venias de relaciones con diferentes formas de actuar o esperabas un poco más pero siendo sinceros fuiste la mujer que tanto luché que deje muchas cosas de lado por ti.</p>
+        <p class="letter-text">Gracias por los momentos compartidos, por las risas y por cada recuerdo que ha encontrado un lugar especial en mi corazón. Ojalá nunca olvides lo valiosa, única y capaz que eres.</p>
+        <p class="letter-text">Hoy quiero que seas la protagonista de tu propio universo. Que brilles a tu manera, que persigas lo que te hace feliz y que la vida te sorprenda con cosas hermosas. Que seas libre de hacer todo lo que te gusta hacer sin sentirte cuestionada, primero tú y después tú. </p>
+        <p class="letter-text">Y recuerda que tu valor no disminuye por el hecho de que alguien no logre ver tu brillo. El sol sigue brillando, aunque las nubes lo oculten.</p>
+        <p class="letter-signoff">Feliz cumpleaños. Te mando un abrazo que dure mucho,<br><span>Con cariño, Juan tú niño❤️🪼</span></p>
+        <span class="letter-star star-a">✧</span><span class="letter-star star-b">✦</span>
+      </div>
+    </section>
+
+    <section class="section cake-section reveal" id="deseo">
+      <p class="eyebrow">CAPÍTULO III · UN DESEO PARA TI</p>
+      <h2>Cierra los ojos y pide un deseo</h2>
+      <p class="section-intro">Este pequeño universo tiene una celebración preparada para ti.</p>
+      <div class="cake-scene" id="cakeScene">
+        <div class="cake-glow"></div>
+        <div class="candles" aria-label="Tres velas encendidas">
+          <div class="candle"><span class="flame"></span><span class="wick"></span></div>
+          <div class="candle"><span class="flame"></span><span class="wick"></span></div>
+          <div class="candle"><span class="flame"></span><span class="wick"></span></div>
+        </div>
+        <div class="cake-top"></div>
+        <div class="cake-body"><span class="icing-drip"></span><span class="cake-heart">♡</span></div>
+        <div class="cake-plate"></div>
+      </div>
+      <button class="primary-button" id="blowButton" type="button">Apagar las velas ✨</button>
+      <p id="wishMessage" class="wish-message" aria-live="polite">Que este nuevo año te acerque a todo lo que sueñas.</p>
+    </section>
+
+    <section class="section secret-section reveal" id="secreto">
+      <p class="eyebrow">CAPÍTULO IV · UN PEQUEÑO SECRETO</p>
+      <h2>Hay una estrella que guarda algo para ti</h2>
+      <p class="section-intro">Tócala para descubrir el último mensaje de esta galaxia.</p>
+      <button class="secret-star" id="secretStar" type="button" aria-label="Descubrir mensaje secreto">
+        <span>✦</span><i></i>
+      </button>
+      <div class="secret-message" id="secretMessage" hidden>
+        <span class="secret-heart">♥</span>
+        <h3>Mi deseo para ti</h3>
+        <p>Te deseo lo mejor de lo mejor, eres una gran mujer que merece todo lo hermoso de este mundo. Que nunca te falten razones para sonreír, fuerza para perseguir tus sueños y amor para recordar lo mucho que vales.</p>
+        <p>Hoy y siempre será una fecha muy especial porque un día como este pero hace 21 años jajaja nació una gran mujer.  </p>
+        <p class="secret-final">El universo es inmenso, pero este mensaje fue escrito pensando solo en ti. 💜</p>
+      </div>
+    </section>
+
+    <section class="finale section reveal">
+      <div class="finale-stars">✧　✦　⋆　♡　⋆　✦　✧</div>
+      <h2>Que tu vida esté llena de luz</h2>
+      <p>Feliz cumpleaños, mi princesa hermosa.</p>
+      <button id="replayButton" class="text-button" type="button">↻ Volver a comenzar</button>
+    </section>
+  </main>
+
+  <footer>Hecho con cariño, un poquito de código y muchas estrellas. <span>♡</span></footer>
+
+  <audio id="backgroundMusic" src="musica/cancion.mp3" loop preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
